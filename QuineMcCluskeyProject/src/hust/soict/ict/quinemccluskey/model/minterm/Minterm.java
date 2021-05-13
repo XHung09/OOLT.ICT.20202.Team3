@@ -1,34 +1,27 @@
 package hust.soict.ict.quinemccluskey.model.minterm;
 
+import hust.soict.ict.quinemccluskey.model.Variable;
+
 public class Minterm extends Implicant {
 
 	// Getters and setters
-	Minterm(String minterm) {
-		super(minterm);
+	public Minterm(String implicant) {
+		super(implicant);
 	}
 
+	public Minterm(String implicant, String binaryExpression) {
+		super(implicant, binaryExpression);
+	}
+	
 	// Methods
 	public void toBinaryExpression() {
-		String binEx[] = super.minterm.split("\\s");			// split by white space
+		binaryExpression = Integer.toBinaryString(Integer.parseInt(implicant));
 		
-		for (int i = 0; i < binEx.length; i++) {
-			super.binaryExpression = Integer.toBinaryString(Integer.parseInt(binEx[i])) + " ";
-		}	
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof Minterm) {
-			Minterm tempMinterm = (Minterm)obj;
-			
-			if (super.binaryExpression == tempMinterm.binaryExpression) {
-				return true;
-			} else {
-				return false;
-			}
-		} else {
-			return false;
+		while (binaryExpression.length() < Variable.numberDigits) {
+			binaryExpression = "0" + binaryExpression;
 		}
-	}
-	
+	}	
+
 }
+	
+
