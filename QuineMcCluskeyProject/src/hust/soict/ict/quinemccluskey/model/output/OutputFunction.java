@@ -56,27 +56,32 @@ public abstract class OutputFunction {
 		StringBuilder res = new StringBuilder();						
 		String []buff = new String[a.size()];
 		char apostrophe = "\u0027".charAt(0);	// apostrophe character: " ' "	
-		int j = 0;
 		int[] count = new int[a.size()];	// count number of consecutive character '-' from the end of the string
 		for(int i = 0; i < a.size(); i ++) {
 			count[i] = 1;
 		}
 		for(int i = 0; i < a.size(); i ++) {
-			buff[i] = a.get(i).toString();
-			StringBuilder str = new StringBuilder();
-			for(; j < buff[i].length(); j ++) {
+			buff[i] = a.get(i).getBinaryExpression().toString();
+			for(int j = 0; j < buff[i].length(); j ++) {
 				if((buff[i].length() - (j + 2) > 0)
 					&& buff[i].charAt(buff[i].length() - (j + 1)) == '-' 
 					&& buff[i].charAt(buff[i].length() - (j + 2)) == '-' ) {	
 					// count consecutive character '-' from the end of the string
 					count[i] ++;
+					
 				}
+			}
+		}
+		for(int i = 0; i < a.size(); i ++) {
+			buff[i] = a.get(i).getBinaryExpression().toString();
+			StringBuilder str = new StringBuilder();
+			for(int j = 0; j < buff[i].length(); j ++) {
 				if(buff[i].charAt(buff[i].length() - 1) == '-') {	// case when '-' is the ending char
 					if(buff[i].charAt(j) != '-') {
 						str.append((char)(j + 65));
 						if(buff[i].charAt(j) == '0')
 							str.append(apostrophe);		
-						if(j != (buff[i].length() - (count[i] + 1)) && j > 0) {
+						if((buff[i].length() != count[i] + 1)  && j != (buff[i].length() - (count[i] + 1)) && j >= 0 ) {
 							str.append('.');
 						}
 					}
@@ -95,7 +100,6 @@ public abstract class OutputFunction {
 			res.append(str);
 			if(i != (a.size() - 1))
 				res.append('+');
-			j = 0;
 		}
 		return res.toString();
 	}
