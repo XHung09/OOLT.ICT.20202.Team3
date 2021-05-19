@@ -13,6 +13,10 @@ public class PITable implements Table {
         primeImplicants = new ArrayList<Implicant>();
         intermediateTable = table;
     }
+    
+    public List<Implicant> getPrimeImplicants() {
+    	return this.primeImplicants;
+    }
 
     @Override
     public void generate() {
