@@ -9,6 +9,9 @@ import hust.soict.ict.quinemccluskey.model.table.PITable;
 
 public abstract class OutputFunction {
 	private String result;	// in SOP format
+	public String getResult() {
+		return this.result;
+	}	
 	public OutputFunction() {
 		super();
 	}
@@ -21,15 +24,15 @@ public abstract class OutputFunction {
 	        .map(s -> s.replaceAll(two, one))
 	        .collect(Collectors.joining(two));
 	}
-	public String DeMorgan(String str) {
-		str = swap(str, "D'", "D");
-		str = swap(str, "C'", "C");
-		str = swap(str,"B'", "B");
-		str = swap(str, "A'", "A");
-		StringBuilder newStr = new StringBuilder(str);
-		int []index = new int[str.length()];
+	public String DeMorgan() {
+		result = swap(result, "D'", "D");
+		result = swap(result, "C'", "C");
+		result = swap(result,"B'", "B");
+		result = swap(result, "A'", "A");
+		StringBuilder newStr = new StringBuilder(result);
+		int []index = new int[result.length()];
 		int j = 0;
-		for(int i = 0; i < str.length(); i++) {
+		for(int i = 0; i < result.length(); i++) {
 			if(newStr.charAt(i) == '.') {
 				newStr.setCharAt(i, '+');
 				j ++;
@@ -52,7 +55,7 @@ public abstract class OutputFunction {
 		return newStr.toString();
 	}
 
-	public String toCharacterEquation(ArrayList<Implicant> a) {		 
+	public void toCharacterEquation(ArrayList<Implicant> a) {		 
 		StringBuilder res = new StringBuilder();						
 		String []buff = new String[a.size()];
 		char apostrophe = "\u0027".charAt(0);	// apostrophe character: " ' "	
@@ -101,13 +104,10 @@ public abstract class OutputFunction {
 			if(i != (a.size() - 1))
 				res.append('+');
 		}
-		return res.toString();
+		result = res.toString();
 	}
 	public ArrayList<Implicant> takeEPI(PITable table){	// unfinished due to the lack of PITable method implementation
 		ArrayList<Implicant> tMin = new ArrayList<Implicant>();
 		return tMin;
 	}
-	public String getResult() {
-		return result;
-	}	
 }

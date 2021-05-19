@@ -14,14 +14,13 @@ public class OutputFunctionTest extends OutputFunction{
 		Implicant c = new CombinedImplicant("", "-10-");
 		Implicant d = new CombinedImplicant("", "01--");
 		Implicant e = new CombinedImplicant("", "010-");
-
+		
 		buff.add(a);
 		buff.add(b);
 		buff.add(c);
 		buff.add(d);
 		buff.add(e);
-		String str = out.toCharacterEquation(buff);
-		System.out.println("Before deMorgan: " + str);
-		System.out.println("After deMorgan: " + out.DeMorgan(str));		
+		out.toCharacterEquation(buff);
+		System.out.println("Result: " + out.DeMorgan());		
 	}
 }
