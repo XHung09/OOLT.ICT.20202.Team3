@@ -11,8 +11,8 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public abstract class Controller {
-	private String threeVarsURL = "";
-	private String fourVarsURL = "";
+	private String threeVarsURL = "/hust/soict/ict/quinemccluskey/view/HomeScreen.fxml";
+	private String fourVarsURL = "/hust/soict/ict/quinemccluskey/view/HomeScreen.fxml";
 	
 	@FXML
 	protected Button threeVarsButton, fourVarsButton;
@@ -24,12 +24,12 @@ public abstract class Controller {
 	}
 	
     @FXML
-    void fourVarsButtonPressed(ActionEvent event) throws IOException {
+    protected void fourVarsButtonPressed(ActionEvent event) throws IOException {
     	this.switchScene(fourVarsURL);
     }
 
     @FXML
-    void threeVarsButtonPressed(ActionEvent event) throws IOException {
+    protected void threeVarsButtonPressed(ActionEvent event) throws IOException {
     	this.switchScene(threeVarsURL);
     }
 }
