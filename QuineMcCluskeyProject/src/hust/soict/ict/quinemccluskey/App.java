@@ -13,8 +13,8 @@ public class App extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("view/HomeScreen.fxml"));
 		Stage stage = new Stage();
 		stage.setScene(new Scene(root));
+		stage.setTitle("Quine - McCluskey Simplifier");
 		stage.show();
-		
 	}
 
 	public static void main(String[] args) {

@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.ict.quinemccluskey.controller.inputcontroller.ThreeVariablesController">
+   <right>
+      <VBox prefHeight="644.0" prefWidth="514.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Output Expression" underline="true">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="190.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="resetButton" mnemonicParsing="false" onAction="#resetPressed" text="Reset">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <RadioButton fx:id="SOPButton" mnemonicParsing="false" selected="true" text="SOP">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="outputExpressionToggle" />
+               </toggleGroup>
+               <VBox.margin>
+                  <Insets left="190.0" top="-25.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="POSButton" mnemonicParsing="false" text="POS" toggleGroup="$outputExpressionToggle">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="190.0" top="5.0" />
+               </VBox.margin>
+            </RadioButton>
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane fx:id="truthTable" prefHeight="682.0" prefWidth="350.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="46.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="10.0" prefWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="67.0" minWidth="0.0" prefWidth="48.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="61.0" minWidth="0.0" prefWidth="41.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="82.0" minWidth="0.0" prefWidth="43.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="10.0" prefWidth="57.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="93.0" minWidth="10.0" prefWidth="67.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="A" textAlignment="CENTER" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="60.0" layoutY="10.0" prefHeight="47.0" prefWidth="72.0" text="B" textAlignment="CENTER" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="110.0" layoutY="10.0" prefHeight="47.0" prefWidth="72.0" text="C" textAlignment="CENTER" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="160.0" layoutY="10.0" prefHeight="47.0" prefWidth="72.0" text="D" textAlignment="CENTER" GridPane.columnIndex="4">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="160.0" layoutY="10.0" prefHeight="47.0" prefWidth="72.0" text="Value" textAlignment="CENTER" GridPane.columnIndex="5">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="260.0" layoutY="10.0" prefHeight="47.0" prefWidth="72.0" text="0/1" textAlignment="CENTER" GridPane.columnIndex="6">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="48.0" prefHeight="47.0" prefWidth="72.0" text="1" textAlignment="CENTER" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="86.0" prefHeight="47.0" prefWidth="72.0" text="2" textAlignment="CENTER" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="124.0" prefHeight="47.0" prefWidth="72.0" text="3" textAlignment="CENTER" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="162.0" prefHeight="47.0" prefWidth="72.0" text="4" textAlignment="CENTER" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="200.0" prefHeight="47.0" prefWidth="72.0" text="5" textAlignment="CENTER" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="238.0" prefHeight="47.0" prefWidth="72.0" text="6" textAlignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="276.0" prefHeight="47.0" prefWidth="72.0" text="7" textAlignment="CENTER" GridPane.rowIndex="8">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="1" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="1" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="1" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="1" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="1" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="1" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="1" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="1" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="1" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="1" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="1" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="1" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="valueAt0" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="valueAt1" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="valueAt2" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="valueAt3" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="valueAt4" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="valueAt5" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="valueAt6" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="7">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="valueAt7" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="8">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="radioButton0" mnemonicParsing="false" onAction="#radioButton0Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="radioButton1" mnemonicParsing="false" onAction="#radioButton1Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="radioButton2" mnemonicParsing="false" onAction="#radioButton2Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="radioButton3" mnemonicParsing="false" onAction="#radioButton3Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="radioButton4" mnemonicParsing="false" onAction="#radioButton4Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="radioButton5" mnemonicParsing="false" onAction="#radioButton5Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="radioButton6" mnemonicParsing="false" onAction="#radioButton6Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="radioButton7" mnemonicParsing="false" onAction="#radioButton7Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </RadioButton>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox prefHeight="126.0" prefWidth="983.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="submitButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#submitButtonPressed" prefHeight="66.0" prefWidth="355.0" text="Submit">
+               <HBox.margin>
+                  <Insets left="79.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <HBox prefHeight="52.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="56.0" prefWidth="192.0" text="Truth Table" textFill="#86c3d3">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="100.0" />
+               </HBox.margin>
+            </Label>
+            <Button contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="35.0" prefWidth="90.0" text="Back">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="620.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
