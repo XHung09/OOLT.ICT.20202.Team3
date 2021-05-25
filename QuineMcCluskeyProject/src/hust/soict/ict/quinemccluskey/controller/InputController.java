@@ -8,6 +8,9 @@ import hust.soict.ict.quinemccluskey.controller.outputcontroller.OutputControlle
 import hust.soict.ict.quinemccluskey.model.column.Column;
 import hust.soict.ict.quinemccluskey.model.minterm.Implicant;
 import hust.soict.ict.quinemccluskey.model.minterm.Minterm;
+import hust.soict.ict.quinemccluskey.model.output.OutputFunction;
+import hust.soict.ict.quinemccluskey.model.output.POS;
+import hust.soict.ict.quinemccluskey.model.output.SOP;
 import hust.soict.ict.quinemccluskey.model.table.IntermediateTable;
 import hust.soict.ict.quinemccluskey.model.table.PITable;
 import javafx.event.ActionEvent;
@@ -57,18 +60,22 @@ public class InputController extends Controller {
     void submitButtonPressed(ActionEvent event) throws IOException {
     	List<Implicant> minterms = new ArrayList<Implicant>();
     	
+    	OutputFunction out;
+
     	if (SOPButton.isSelected()) {
     		for (int i = 0; i < radioButton.length; i++) {
     			if (radioButton[i].isSelected()) {
     				minterms.add(new Minterm(String.valueOf(i)));
     			}
     		}
+    		out = new SOP();
     	} else {
     		for (int i = 0; i < radioButton.length; i++) {
     			if (radioButton[i].isSelected() == false) {
     				minterms.add(new Minterm(String.valueOf(i)));
     			}
     		}
+    		out = new POS();
     	}
     	Column column = new Column(minterms);
     	
@@ -78,6 +85,8 @@ public class InputController extends Controller {
     	PITable primeImplicantTable = new PITable(table);
     	primeImplicantTable.generate();
     	
+    	out.generate(primeImplicantTable, minterms);
+    	
     	FXMLLoader loader = new FXMLLoader(getClass().
     			getResource("/hust/soict/ict/quinemccluskey/view/Output.fxml"));
         
@@ -86,6 +95,8 @@ public class InputController extends Controller {
         OutputController outputcontroller = loader.getController();
         outputcontroller.setIntermediateTable(table);
         outputcontroller.setPITable(primeImplicantTable);
+        outputcontroller.setMakeEquationTable(out);
+        outputcontroller.setFinalEquation(out);
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

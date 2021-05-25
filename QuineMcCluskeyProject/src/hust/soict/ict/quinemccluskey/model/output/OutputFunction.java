@@ -12,9 +12,15 @@ public abstract class OutputFunction {
 	private String result;	// in SOP format
 	List<Implicant> EPI = new ArrayList<Implicant> ();
 	
+
+	public List<Implicant> getEPI() {
+		return EPI;
+	}
+
 	public String getResult() {
 		return this.result;
 	}	
+	
 	public OutputFunction() {
 		super();
 	}
@@ -22,6 +28,9 @@ public abstract class OutputFunction {
 		super();
 		this.result = result;
 	}
+	
+	public abstract void generate(PITable table, List<Implicant> implicants);
+	
 	private String swap(String str, String one, String two){
 	    return Arrays.stream(str.split(one, -1))
 	        .map(s -> s.replaceAll(two, one))
@@ -109,9 +118,8 @@ public abstract class OutputFunction {
 		}
 		result = res.toString();
 	}
-
-
-	public List<Implicant> takeEPI(PITable table, List<Implicant> minterms) {
+	
+	protected List<Implicant> takeEPI(PITable table, List<Implicant> minterms) {
 		List<Implicant> primeImplicants = table.getPrimeImplicants();
 		EPI.addAll(primeImplicants);
 
