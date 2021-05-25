@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -13,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.ict.quinemccluskey.controller.inputcontroller.FourVariablesController">
+<BorderPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.ict.quinemccluskey.controller.inputcontroller.FourVariablesController">
    <right>
       <VBox prefHeight="644.0" prefWidth="514.0" BorderPane.alignment="CENTER">
          <children>
@@ -515,214 +520,6 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="valueAt0" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="valueAt1" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="2">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="valueAt2" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="3">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="valueAt3" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="4">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="valueAt4" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="5">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="valueAt5" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="6">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="valueAt6" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="7">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="valueAt7" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="8">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="valueAt8" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="9">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="valueAt9" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="10">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="valueAt10" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="11">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="valueAt11" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="12">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="valueAt12" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="13">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="valueAt13" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="14">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="valueAt14" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="15">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="valueAt15" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="72.0" text="0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="16">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <RadioButton fx:id="radioButton0" mnemonicParsing="false" onAction="#radioButton0Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <RadioButton fx:id="radioButton1" mnemonicParsing="false" onAction="#radioButton1Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <RadioButton fx:id="radioButton2" mnemonicParsing="false" onAction="#radioButton2Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="3">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <RadioButton fx:id="radioButton3" mnemonicParsing="false" onAction="#radioButton3Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="4">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <RadioButton fx:id="radioButton4" mnemonicParsing="false" onAction="#radioButton4Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="5">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <RadioButton fx:id="radioButton5" mnemonicParsing="false" onAction="#radioButton5Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="6">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <RadioButton fx:id="radioButton6" mnemonicParsing="false" onAction="#radioButton6Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="7">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <RadioButton fx:id="radioButton7" mnemonicParsing="false" onAction="#radioButton7Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="8">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <RadioButton fx:id="radioButton8" mnemonicParsing="false" onAction="#radioButton8Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="9">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <RadioButton fx:id="radioButton9" mnemonicParsing="false" onAction="#radioButton9Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="10">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <RadioButton fx:id="radioButton10" mnemonicParsing="false" onAction="#radioButton10Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="11">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <RadioButton fx:id="radioButton11" mnemonicParsing="false" onAction="#radioButton11Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="12">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <RadioButton fx:id="radioButton12" mnemonicParsing="false" onAction="#radioButton12Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="13">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <RadioButton fx:id="radioButton13" mnemonicParsing="false" onAction="#radioButton13Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="14">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <RadioButton fx:id="radioButton14" mnemonicParsing="false" onAction="#radioButton14Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="15">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <RadioButton fx:id="radioButton15" mnemonicParsing="false" onAction="#radioButton15Selected" prefHeight="31.0" prefWidth="9.0" GridPane.columnIndex="6" GridPane.rowIndex="16">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
                </children>
             </GridPane>
          </children>
