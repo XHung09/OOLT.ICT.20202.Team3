@@ -8,13 +8,14 @@ import hust.soict.ict.quinemccluskey.model.minterm.CombinedImplicant;
 import hust.soict.ict.quinemccluskey.model.minterm.Implicant;
 import hust.soict.ict.quinemccluskey.model.minterm.Minterm;
 import hust.soict.ict.quinemccluskey.model.output.OutputFunction;
+import hust.soict.ict.quinemccluskey.model.output.SOP;
 import hust.soict.ict.quinemccluskey.model.table.IntermediateTable;
 import hust.soict.ict.quinemccluskey.model.table.PITable;
 import hust.soict.ict.quinemccluskey.model.table.Table;
 
-public class OutputFunctionTest extends OutputFunction{
+public class OutputFunctionTest{
 	public static void main(String[] args) {
-		OutputFunctionTest out = new OutputFunctionTest();
+		OutputFunction out = new SOP();
 		ArrayList<Implicant> buff = new ArrayList<Implicant>();
 		Variable.numberDigits = 3;
 		
@@ -46,7 +47,7 @@ public class OutputFunctionTest extends OutputFunction{
 		Table primeImplicantTable = new PITable(intermediateTable);
 		primeImplicantTable.generate();
 
-		out.toCharacterEquation(out.takeEPI((PITable) primeImplicantTable, buff));
+		out.generate((PITable)primeImplicantTable, buff);
 		System.out.println(out.getResult());
 		
 	}
