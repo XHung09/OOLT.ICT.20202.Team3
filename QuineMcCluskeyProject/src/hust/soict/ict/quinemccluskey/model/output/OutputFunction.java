@@ -9,8 +9,8 @@ import hust.soict.ict.quinemccluskey.model.minterm.Implicant;
 import hust.soict.ict.quinemccluskey.model.table.PITable;
 
 public abstract class OutputFunction {
-	private String result;	// in SOP format
-	List<Implicant> EPI = new ArrayList<Implicant> ();
+	protected String result;	// in SOP format
+	protected List<Implicant> EPI = new ArrayList<Implicant> ();
 	
 
 	public List<Implicant> getEPI() {
@@ -63,10 +63,29 @@ public abstract class OutputFunction {
 				i ++;
 			}
 		}
-		newStr.append(')');
-		return newStr.toString();
+		result = newStr.append(')').toString();
+		return result;
 	}
 
+	public void toCharacterEquation(Implicant implicant) {		 
+		StringBuilder str = new StringBuilder();
+		for(int i = 0; i < implicant.getBinaryExpression().length(); i++) {
+			if(implicant.getBinaryExpression().charAt(i) == '-') {
+				continue;
+			}
+			
+			if(implicant.getBinaryExpression().charAt(i) == '0') {
+				str.append((char) (i + 'A') + "'");
+			}
+			else if(implicant.getBinaryExpression().charAt(i) == '1') {
+				str.append((char) (i + 'A'));
+			}
+			str.append('.');
+		}
+		str.setLength(str.length() - 1);	// get rid of the last '.'
+		this.result = str.toString();
+	}
+	
 	public void toCharacterEquation(List<Implicant> a) {		 
 		StringBuilder res = new StringBuilder();						
 		String []buff = new String[a.size()];
