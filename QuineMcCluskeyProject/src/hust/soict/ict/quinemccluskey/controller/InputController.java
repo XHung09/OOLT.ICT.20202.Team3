@@ -95,8 +95,8 @@ public class InputController extends Controller {
         OutputController outputcontroller = loader.getController();
         outputcontroller.setIntermediateTable(table);
         outputcontroller.setPITable(primeImplicantTable);
-        outputcontroller.setMakeEquationTable(out);
         outputcontroller.setFinalEquation(out);
+        outputcontroller.setMakeEquationTable(out);
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

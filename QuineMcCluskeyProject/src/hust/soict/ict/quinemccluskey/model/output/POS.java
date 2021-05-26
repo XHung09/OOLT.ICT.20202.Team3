@@ -8,9 +8,9 @@ import hust.soict.ict.quinemccluskey.model.table.PITable;
 public class POS extends OutputFunction{
 
 	@Override
-	public void generate(PITable table, List<Implicant> implicants) {
-		takeEPI(table, implicants);
-		DeMorgan();	
+	public void generate(PITable table, List<Implicant> minterms) {
+		takeEPI(table, minterms);
+		toCharacterEquation(EPI);
+		result = DeMorgan();	
 	}
-	
 }

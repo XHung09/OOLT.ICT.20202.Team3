@@ -8,6 +8,7 @@ import hust.soict.ict.quinemccluskey.model.minterm.CombinedImplicant;
 import hust.soict.ict.quinemccluskey.model.minterm.Implicant;
 import hust.soict.ict.quinemccluskey.model.minterm.Minterm;
 import hust.soict.ict.quinemccluskey.model.output.OutputFunction;
+import hust.soict.ict.quinemccluskey.model.output.POS;
 import hust.soict.ict.quinemccluskey.model.output.SOP;
 import hust.soict.ict.quinemccluskey.model.table.IntermediateTable;
 import hust.soict.ict.quinemccluskey.model.table.PITable;
@@ -15,7 +16,7 @@ import hust.soict.ict.quinemccluskey.model.table.Table;
 
 public class OutputFunctionTest{
 	public static void main(String[] args) {
-		OutputFunction out = new SOP();
+		OutputFunction out = new POS();
 		ArrayList<Implicant> buff = new ArrayList<Implicant>();
 		Variable.numberDigits = 3;
 		

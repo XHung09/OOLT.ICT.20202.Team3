@@ -73,7 +73,7 @@ public class OutputController {
     				(out.getEPI().get(i).getImplicant());
     		Label toBinaryLabel = new Label
     				(out.getEPI().get(i).getBinaryExpression());
-    		out.toCharacterEquation(out.getEPI());
+    		out.toCharacterEquation(out.getEPI().get(i));
     		Label characterLabel = new Label
     				(out.getResult());
     		EPILabel.setFont(Font.font(EPILabel.getFont().getName(), 
@@ -96,8 +96,6 @@ public class OutputController {
     }
     
     public void setFinalEquation(OutputFunction out) {
-    	out.toCharacterEquation(out.getEPI());
-    	finalEquation = new Label(out.getResult());
+    	finalEquation.setText(out.getResult());
     }
-
 }
