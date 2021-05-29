@@ -40,7 +40,6 @@ public class OutputController extends Controller {
             						FontPosture.REGULAR, 
             						14));
             intermediateTable.add(intermediatelbl, i, 1);
-
             GridPane.setHalignment(intermediatelbl, HPos.CENTER);
             GridPane.setValignment(intermediatelbl, VPos.TOP);
         }
@@ -60,9 +59,9 @@ public class OutputController extends Controller {
 									14));
     		
     		primeImplicantTable.add(implicantLabel, 0, i + 1);
-
     		 GridPane.setHalignment(implicantLabel, HPos.CENTER);
              GridPane.setValignment(implicantLabel, VPos.TOP);
+
 
     		String[] minterms = table.getPrimeImplicants().get(i).
     							getImplicant().split("\\W+");
@@ -92,7 +91,6 @@ public class OutputController extends Controller {
 					FontWeight.BOLD, 
 					FontPosture.REGULAR, 
 					14));
-
     		characterLabel.setFont(Font.font(characterLabel.getFont().getName(), 
 					FontWeight.BOLD, 
 					FontPosture.REGULAR, 
@@ -101,7 +99,6 @@ public class OutputController extends Controller {
     		makeEquationTable.add(EPILabel, 0, i + 1);
     		makeEquationTable.add(toBinaryLabel, 1, i + 1);
     		makeEquationTable.add(characterLabel, 2, i + 1);
-
     		GridPane.setHalignment(EPILabel, HPos.CENTER);
             GridPane.setValignment(EPILabel, VPos.TOP);
             GridPane.setHalignment(toBinaryLabel, HPos.CENTER);
@@ -112,13 +109,6 @@ public class OutputController extends Controller {
     }
     
     public void setFinalEquation(OutputFunction out) {
-    	out.toCharacterEquation(out.getEPI());
-    	finalEquation = new Label(out.getResult());
-    	
-		GridPane.setHalignment(finalEquation, HPos.CENTER);
-		GridPane.setValignment(finalEquation, VPos.TOP);
-
     	finalEquation.setText(out.getResult());
-
     }
 }
