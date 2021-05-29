@@ -1,6 +1,7 @@
 package hust.soict.ict.quinemccluskey.controller.outputcontroller;
 
 
+import hust.soict.ict.quinemccluskey.controller.Controller;
 import hust.soict.ict.quinemccluskey.model.output.OutputFunction;
 import hust.soict.ict.quinemccluskey.model.table.IntermediateTable;
 import hust.soict.ict.quinemccluskey.model.table.PITable;
@@ -13,7 +14,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 
-public class OutputController {
+public class OutputController extends Controller {
     @FXML
     private GridPane intermediateTable;
 
@@ -39,8 +40,9 @@ public class OutputController {
             						FontPosture.REGULAR, 
             						14));
             intermediateTable.add(intermediatelbl, i, 1);
-			GridPane.setHalignment(intermediatelbl, HPos.CENTER);
-			GridPane.setValignment(intermediatelbl, VPos.TOP);
+
+            GridPane.setHalignment(intermediatelbl, HPos.CENTER);
+            GridPane.setValignment(intermediatelbl, VPos.TOP);
         }
     }
 
@@ -58,9 +60,9 @@ public class OutputController {
 									14));
     		
     		primeImplicantTable.add(implicantLabel, 0, i + 1);
-    		
-			GridPane.setHalignment(implicantLabel, HPos.CENTER);
-			GridPane.setValignment(implicantLabel, VPos.TOP);
+
+    		 GridPane.setHalignment(implicantLabel, HPos.CENTER);
+             GridPane.setValignment(implicantLabel, VPos.TOP);
 
     		String[] minterms = table.getPrimeImplicants().get(i).
     							getImplicant().split("\\W+");
@@ -79,7 +81,7 @@ public class OutputController {
     				(out.getEPI().get(i).getImplicant());
     		Label toBinaryLabel = new Label
     				(out.getEPI().get(i).getBinaryExpression());
-    		out.toCharacterEquation(out.getEPI());
+    		out.toCharacterEquation(out.getEPI().get(i));
     		Label characterLabel = new Label
     				(out.getResult());
     		EPILabel.setFont(Font.font(EPILabel.getFont().getName(), 
@@ -90,7 +92,8 @@ public class OutputController {
 					FontWeight.BOLD, 
 					FontPosture.REGULAR, 
 					14));
-    		toBinaryLabel.setFont(Font.font(toBinaryLabel.getFont().getName(), 
+
+    		characterLabel.setFont(Font.font(characterLabel.getFont().getName(), 
 					FontWeight.BOLD, 
 					FontPosture.REGULAR, 
 					14));
@@ -98,15 +101,13 @@ public class OutputController {
     		makeEquationTable.add(EPILabel, 0, i + 1);
     		makeEquationTable.add(toBinaryLabel, 1, i + 1);
     		makeEquationTable.add(characterLabel, 2, i + 1);
-    		
-			GridPane.setHalignment(EPILabel, HPos.CENTER);
-			GridPane.setValignment(EPILabel, VPos.TOP);
-            
-			GridPane.setHalignment(EPILabel, HPos.CENTER);
-			GridPane.setValignment(EPILabel, VPos.TOP);
-            
-			GridPane.setHalignment(toBinaryLabel, HPos.CENTER);
-			GridPane.setValignment(toBinaryLabel, VPos.TOP);
+
+    		GridPane.setHalignment(EPILabel, HPos.CENTER);
+            GridPane.setValignment(EPILabel, VPos.TOP);
+            GridPane.setHalignment(toBinaryLabel, HPos.CENTER);
+            GridPane.setValignment(toBinaryLabel, VPos.TOP);
+            GridPane.setHalignment(characterLabel, HPos.CENTER);
+            GridPane.setValignment(characterLabel, VPos.TOP);
     	}
     }
     
@@ -116,6 +117,8 @@ public class OutputController {
     	
 		GridPane.setHalignment(finalEquation, HPos.CENTER);
 		GridPane.setValignment(finalEquation, VPos.TOP);
-    }
 
+    	finalEquation.setText(out.getResult());
+
+    }
 }

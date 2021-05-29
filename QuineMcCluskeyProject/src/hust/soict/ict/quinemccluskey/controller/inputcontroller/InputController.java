@@ -1,9 +1,10 @@
-package hust.soict.ict.quinemccluskey.controller;
+package hust.soict.ict.quinemccluskey.controller.inputcontroller;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import hust.soict.ict.quinemccluskey.controller.Controller;
 import hust.soict.ict.quinemccluskey.controller.outputcontroller.OutputController;
 import hust.soict.ict.quinemccluskey.model.column.Column;
 import hust.soict.ict.quinemccluskey.model.minterm.Implicant;
