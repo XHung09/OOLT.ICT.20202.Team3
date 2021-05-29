@@ -169,6 +169,11 @@
    <right>
       <VBox prefHeight="924.0" prefWidth="547.0" BorderPane.alignment="CENTER">
          <children>
+            <Label alignment="CENTER" prefHeight="78.0" prefWidth="552.0" text="Final Equation:">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
             <Label fx:id="finalEquation" alignment="CENTER" prefHeight="66.0" prefWidth="547.0" text="Final Equation">
                <VBox.margin>
                   <Insets top="28.0" />
