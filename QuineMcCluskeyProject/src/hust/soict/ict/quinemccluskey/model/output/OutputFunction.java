@@ -82,8 +82,10 @@ public abstract class OutputFunction {
 			}
 			str.append('.');
 		}
-		str.setLength(str.length() - 1);	// get rid of the last '.'
-		this.result = str.toString();
+		if(str.length() > 0) {
+			str.setLength(str.length() - 1);	// get rid of the last '.'
+			this.result = str.toString();
+		}
 	}
 	
 	public void toCharacterEquation(List<Implicant> a) {		 
