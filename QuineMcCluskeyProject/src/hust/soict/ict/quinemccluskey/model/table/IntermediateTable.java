@@ -6,9 +6,8 @@ import java.util.List;
 import hust.soict.ict.quinemccluskey.model.column.Column;
 import hust.soict.ict.quinemccluskey.model.minterm.Implicant;
 
-public class IntermediateTable implements Table {
+public class IntermediateTable extends Table {
     private List<Column> columns = new ArrayList<Column>();
-    private List<Implicant> primeImplicants = new ArrayList<Implicant>();
 
     public IntermediateTable(Column c) {
         this.columns.add(c);
