@@ -5,13 +5,12 @@ import java.util.List;
 
 import hust.soict.ict.quinemccluskey.model.minterm.Implicant;
 
-public class PITable implements Table {
-    private List<Implicant> primeImplicants = new ArrayList<Implicant>();
-    private Table intermediateTable;
+public class PITable extends Table {
+    private Table table;
 
     public PITable(Table table) {
         primeImplicants = new ArrayList<Implicant>();
-        intermediateTable = table;
+        this.table = table;
     }
     
     public List<Implicant> getPrimeImplicants() {
@@ -20,9 +19,7 @@ public class PITable implements Table {
 
     @Override
     public void generate() {
-        if(intermediateTable instanceof IntermediateTable) {
-            primeImplicants = ((IntermediateTable) intermediateTable).getPrimeImplicants();
-        }
+        primeImplicants = table.getPrimeImplicants();
     }
 
     @Override
