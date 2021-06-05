@@ -15,6 +15,7 @@ import hust.soict.ict.quinemccluskey.model.output.POS;
 import hust.soict.ict.quinemccluskey.model.output.SOP;
 import hust.soict.ict.quinemccluskey.model.table.IntermediateTable;
 import hust.soict.ict.quinemccluskey.model.table.PITable;
+import hust.soict.ict.quinemccluskey.model.table.Table;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -81,13 +82,13 @@ public class InputController extends Controller {
     	}
     	Column column = new Column(minterms);
     	
-    	IntermediateTable table = new IntermediateTable(column);
+    	Table table = new IntermediateTable(column);
     	table.generate();
     	
-    	PITable primeImplicantTable = new PITable(table);
+    	Table primeImplicantTable = new PITable(table);
     	primeImplicantTable.generate();
     	
-    	out.generate(primeImplicantTable, minterms);
+    	out.generate((PITable) primeImplicantTable, minterms);
     	
     	FXMLLoader loader = new FXMLLoader(getClass().
     			getResource("/hust/soict/ict/quinemccluskey/view/Output.fxml"));
@@ -95,8 +96,8 @@ public class InputController extends Controller {
     	Parent root = loader.load();
 
         OutputController outputcontroller = loader.getController();
-        outputcontroller.setIntermediateTable(table);
-        outputcontroller.setPITable(primeImplicantTable);
+        outputcontroller.setIntermediateTable((IntermediateTable) table);
+        outputcontroller.setPITable((PITable) primeImplicantTable);
         outputcontroller.setFinalEquation(out);
         outputcontroller.setMakeEquationTable(out);
 

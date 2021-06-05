@@ -2,6 +2,7 @@ package hust.soict.ict.quinemccluskey.controller.outputcontroller;
 
 
 import hust.soict.ict.quinemccluskey.controller.Controller;
+import hust.soict.ict.quinemccluskey.model.minterm.Implicant;
 import hust.soict.ict.quinemccluskey.model.output.CanonicalForm;
 import hust.soict.ict.quinemccluskey.model.table.IntermediateTable;
 import hust.soict.ict.quinemccluskey.model.table.PITable;
@@ -82,11 +83,13 @@ public class OutputController extends Controller {
     	for(int i = 0; i < out.getEPI().size(); i ++) {
     		Label EPILabel = new Label
     				(out.getEPI().get(i).getImplicant());
+    		
     		Label toBinaryLabel = new Label
     				(out.getEPI().get(i).getBinaryExpression());
-    		FunctionConverter.fromEPIToFunction(out.getEPI().get(i));
+    		
     		Label characterLabel = new Label
-    				(out.getResult());
+    				(FunctionConverter.fromEPIToFunction(out.getEPI().get(i)));
+    		
     		EPILabel.setFont(Font.font(EPILabel.getFont().getName(), 
 					FontWeight.BOLD, 
 					FontPosture.REGULAR, 
