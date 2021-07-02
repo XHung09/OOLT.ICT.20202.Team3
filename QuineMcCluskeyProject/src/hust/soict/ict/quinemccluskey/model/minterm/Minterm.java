@@ -7,10 +7,17 @@ public class Minterm extends Implicant {
 	// Getters and setters
 	public Minterm(String implicant) {
 		super(implicant);
+		this.toBinaryExpression();
 	}
 
 	public Minterm(String implicant, String binaryExpression) {
 		super(implicant, binaryExpression);
+	}
+	
+	@Override
+	public void setImplicant(String implicant) {
+		this.implicant = implicant;
+		this.toBinaryExpression();
 	}
 	
 	// Methods
