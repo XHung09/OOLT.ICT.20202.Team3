@@ -6,9 +6,9 @@ import java.util.List;
 import hust.soict.ict.quinemccluskey.model.minterm.Implicant;
 
 public class PITable extends Table {
-    private Table table;
+    private IntermediateTable table;
 
-    public PITable(Table table) {
+    public PITable(IntermediateTable table) {
         primeImplicants = new ArrayList<Implicant>();
         this.table = table;
     }

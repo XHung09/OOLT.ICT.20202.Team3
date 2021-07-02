@@ -24,7 +24,7 @@ public class PrimeImplicantTableTest {
         table.generate();
 
         System.out.println("All PI goes here:");
-        Table PITable = new PITable(table);
+        Table PITable = new PITable((IntermediateTable) table);
         PITable.generate();
         PITable.display();
     }    

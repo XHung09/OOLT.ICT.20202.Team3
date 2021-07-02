@@ -85,7 +85,7 @@ public class InputController extends Controller {
     	Table table = new IntermediateTable(column);
     	table.generate();
     	
-    	Table primeImplicantTable = new PITable(table);
+    	Table primeImplicantTable = new PITable((IntermediateTable) table);
     	primeImplicantTable.generate();
     	
     	out.generate((PITable) primeImplicantTable, minterms);
