@@ -2,8 +2,6 @@ package hust.soict.ict.quinemccluskey.model.column;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import hust.soict.ict.quinemccluskey.model.minterm.CombinedImplicant;
 import hust.soict.ict.quinemccluskey.model.minterm.Implicant;
 import hust.soict.ict.quinemccluskey.utils.Cache;
 import hust.soict.ict.quinemccluskey.utils.Variable;
@@ -92,6 +90,6 @@ public class Column {
 			}
 			binaryExpression.append(bit);
 		}
-		return new CombinedImplicant(implicant, binaryExpression.toString()); 
+		return new Implicant(implicant, binaryExpression.toString()); 
 	}
 }

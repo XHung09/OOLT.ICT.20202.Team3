@@ -1,6 +1,6 @@
 package hust.soict.ict.quinemccluskey.model.minterm;
 
-public abstract class Implicant {
+public class Implicant {
 
 	protected String implicant;
 	protected String binaryExpression;
@@ -13,9 +13,6 @@ public abstract class Implicant {
 
 	public void setImplicant(String implicant) {
 		this.implicant = implicant;
-		if(this instanceof Minterm) {
-			((Minterm) this).toBinaryExpression();
-		}
 	}
 	
 	public String getBinaryExpression() {
@@ -33,9 +30,6 @@ public abstract class Implicant {
 	// Constructors
 	public Implicant(String implicant) {
 		this.implicant = implicant;
-		if(this instanceof Minterm) {
-			((Minterm) this).toBinaryExpression();
-		}
 	}
 
 	public Implicant(String implicant, String binaryExpression) {
@@ -49,14 +43,13 @@ public abstract class Implicant {
 		String e2 = implicant.binaryExpression;
 		int countDiff = 0;
 		
-		for(int i = 0; i < e1.length(); i++) {
+		for (int i = 0; i < e1.length(); i++) {
 			if(e1.charAt(i) != e2.charAt(i)) {
 				countDiff++;
 			}
 		}
 
-		return countDiff == 1;
-		
+		return countDiff == 1;	
 	}
 	
 	@Override
