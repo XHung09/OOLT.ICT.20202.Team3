@@ -44,7 +44,7 @@ public class OutputFunctionTest{
 		Table intermediateTable = new IntermediateTable(firstCol);
 		intermediateTable.generate();
 		
-		Table primeImplicantTable = new PITable(intermediateTable);
+		Table primeImplicantTable = new PITable((IntermediateTable) intermediateTable);
 		primeImplicantTable.generate();
 
 		out.generate((PITable)primeImplicantTable, buff);

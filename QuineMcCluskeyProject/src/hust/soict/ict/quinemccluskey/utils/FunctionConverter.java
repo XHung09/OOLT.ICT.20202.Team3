@@ -15,25 +15,18 @@ public class FunctionConverter {
 	
 	public static String DeMorgan(String s) {
 		String DM = new String(s);
-		StringBuilder newStr = new StringBuilder(s);
 		
-		DM = swap(s, "D'", "D");
-		DM = swap(s, "C'", "C");
-		DM = swap(s,"B'", "B");
-		DM = swap(s, "A'", "A");
-		
-		int[] index = new int[DM.length()];
-		int j = 0;
-		
-		for(int i = 0; i < DM.length(); i++) {
+		DM = swap(DM, "D'", "D");
+		DM = swap(DM, "C'", "C");
+		DM = swap(DM, "B'", "B");
+		DM = swap(DM, "A'", "A");
+
+		StringBuilder newStr = new StringBuilder(DM);
+		for(int i = 0; i < newStr.length(); i++) {
 			if(newStr.charAt(i) == '.') {
 				newStr.setCharAt(i, '+');
-				j ++;
-				continue;
-			}else if(newStr.charAt(i) == '+') {
-				index[j] = i;
+			} else if(newStr.charAt(i) == '+') {
 				newStr.setCharAt(i, '.');
-				continue;
 			}
 		}
 		
